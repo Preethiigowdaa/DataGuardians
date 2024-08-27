@@ -1,0 +1,33 @@
+/* src/app/footer/footer.component.css */
+
+/* Footer Styles */
+.footer {
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    padding: 10px 0;
+    border-top: 1px solid var(--footer-border-color);
+  }
+  
+  .copyright-content {
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .copyright-text {
+    font-size: 14px;
+  }
+  
+  .copyright-text a {
+    color: var(--footer-link-color);
+    text-decoration: none;
+  }
+  
+  .copyright-text a:hover {
+    text-decoration: underline;
+  }
+  
