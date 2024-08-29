@@ -4,8 +4,6 @@ import { ThemeService } from 'src/app/theme.service';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-footer',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'], // Note the correction: styleUrls should be an array, and it is styleUrls, not styleUrl
 })

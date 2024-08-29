@@ -1,22 +1,25 @@
-export class AuthService {
-  private isLoggedIn = false;
+import { Injectable } from '@angular/core';
 
-  login(userId: string, password: string): boolean {
-    // Replace this with your actual authentication logic
-    if (userId === 'user' && password === 'menarini@123') {
-      this.isLoggedIn = true;
+@Injectable({
+  providedIn: 'root',
+})
+export class AuthService {
+  private loggedIn = false;
+
+  login(email: string, password: string): boolean {
+    // Implement your authentication logic here
+    if (email === 'test@example.com' && password === 'password') {
+      this.loggedIn = true;
       return true;
-    } else {
-      this.isLoggedIn = false;
-      return false;
     }
+    return false;
   }
 
   logout(): void {
-    this.isLoggedIn = false;
+    this.loggedIn = false;
   }
 
   isAuthenticated(): boolean {
-    return this.isLoggedIn;
+    return this.loggedIn;
   }
 }

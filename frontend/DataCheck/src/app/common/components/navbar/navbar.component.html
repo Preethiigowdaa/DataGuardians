@@ -1,11 +1,11 @@
 <nav class="navbar page-header navbar-light fixed-top">
   <div class="d-flex justify-content-between w-100" style="background-image: url('https://cdn.kekastatic.net/shared/assets/images/components/page-header/2.png');">
     <div class="d-flex align-items-center ps-2">
-      <a class="navbar-brand cursor-pointer" href="#/home">
+      <a class="navbar-brand cursor-pointer" (click)="navigateToHome()">
         <img alt="DataGuardians" height="55" width="55" src="assets/logo.png">
       </a>
       <div class="nav-title align-self-center">
-        <a class="org-name" href="#/home">DATA GUARDIANS</a>
+        <a class="org-name" (click)="navigateToHome()">DATA GUARDIANS</a>
       </div>
     </div>
 
@@ -18,7 +18,7 @@
           </button>
           <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
             <a (click)="navigateToProfile()"  class="dropdown-item"><i class="fas fa-user"></i> Profile</a> <!-- Updated to routerLink -->
-            <a routerLink="/logout" class="dropdown-item"><i class="fas fa-power-off"></i> Logout</a> <!-- Updated to routerLink -->
+            <a (click)="logout()" class="dropdown-item"><i class="fas fa-power-off"></i> Logout</a> <!-- Updated to routerLink -->
             <div class="toggle-theme-container">
               <label class="text-x-small mr-10">Light</label>
               <label class="theme-switch">

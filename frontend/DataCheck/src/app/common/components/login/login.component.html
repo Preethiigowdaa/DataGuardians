@@ -1,0 +1,45 @@
+<div class="container" style="padding: 30px;">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <img style="height: 4rem;" src="assets/login/DZ_AILogo.png" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <img style="width: 100%" src="assets/login/email_marketing.svg" />
+        </div>
+        <div class="col-sm-6">
+            <div class="sign-in-form">
+                <div class="form-title">Sign In</div>
+                <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                    <div class="col">
+                        <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
+                    </div>
+                    <div class="form-element">
+                        <label class="form-label" for="email">Email Id</label>
+                        <div class="form-field">
+                            <input id="email" type="email" [(ngModel)]="email" name="email" class="field01" required />
+                            <a href="/" class="field_icon"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="form-element">
+                        <label class="form-label" for="password">Password</label>
+                        <div class="form-field">
+                            <input id="password" type="password" [(ngModel)]="password" name="password" class="field01" required />
+                            <a href="/" class="field_icon"><i class="fa fa-key" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <button type="submit" class="signin-btn">Sign In</button>
+                    <div class="line-or-container">
+                        <div class="line-or">
+                            <span>OR</span>
+                        </div>
+                    </div>
+                    <div class="line-or-container">
+                        <a class="signin-btn-seagen" routerLink="/sso">Sign In with SSO</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

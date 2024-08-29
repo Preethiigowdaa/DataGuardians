@@ -18,6 +18,7 @@ import { LandingComponent } from './core/components/landing/landing.component';
 import { NavbarComponent } from './common/components/navbar/navbar.component';
 import { FooterComponent } from './common/components/footer/footer.component';
 import { ProfileComponent } from './core/components/profile/profile.component';
+import { LoginComponent } from './common/components/login/login.component';
 
 // function initializeKeycloak(keycloak: KeycloakService) {
 //   return () =>
@@ -44,13 +45,19 @@ import { ProfileComponent } from './core/components/profile/profile.component';
 // }
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent, ProfileComponent],
-  imports: [
-    BrowserModule,
+  declarations: [
+    AppComponent,
+    LandingComponent,
+    ProfileComponent,
+    LoginComponent,
     NavbarComponent,
     FooterComponent,
+  ],
+  imports: [
+    BrowserModule,
     RouterModule,
     AppRoutingModule,
+    FormsModule,
     // NgxEchartsModule.forRoot({ echarts: () => import('echarts') }),
     // FormsModule,
     // BrowserModule,

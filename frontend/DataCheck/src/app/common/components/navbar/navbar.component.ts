@@ -10,27 +10,38 @@ import { isPlatformBrowser } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../../theme.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
+import { NavbarService } from 'src/app/core/services/navbar.service';
 
 @Component({
   selector: 'app-navbar',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
   private isBrowser: boolean;
-
+  // isAuthenticated = false;
   constructor(
     private renderer: Renderer2,
     @Inject(PLATFORM_ID) private platformId: Object,
     private router: Router,
+    private authService: AuthService,
+    private navbarService: NavbarService,
     private themeService: ThemeService // Inject ThemeService here
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
   navigateToProfile() {
     this.router.navigate(['/myprofile/about']);
+  }
+  navigateToHome() {
+    this.router.navigate(['/home']);
+  }
+  logout(): void {
+    this.authService.logout();
+    this.navbarService.setNavbarVisibility(false);
+    this.themeService.toggleTheme(true);
+    this.router.navigate(['/login']);
   }
   ngOnInit(): void {
     if (this.isBrowser) {
@@ -53,6 +64,8 @@ export class NavbarComponent implements OnInit {
         const isChecked = (event.target as HTMLInputElement).checked;
         this.themeService.toggleTheme(!isChecked); // Pass the opposite of the checked state
       });
+      // this.isAuthenticated = this.authService.isAuthenticated();
+      // console.log('Authentication Status:', this.isAuthenticated);
 
       // Close the dropdown if clicked outside
       this.renderer.listen('window', 'click', (event: Event) => {

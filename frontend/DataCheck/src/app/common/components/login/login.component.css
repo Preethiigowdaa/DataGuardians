@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.container {
+    max-width: 100%;
+    background-color: white;
+}
+
+.sign-in-form {
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.form-element {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.form-field {
+    position: relative;
+}
+
+.field01 {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.field_icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.signin-btn {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.signin-btn-seagen {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #6c757d;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.line-or-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.line-or {
+    position: relative;
+    text-align: center;
+}
+
+.line-or::before,
+.line-or::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    border-top: 1px solid #ccc;
+}
+
+.line-or::before {
+    left: 0;
+}
+
+.line-or::after {
+    right: 0;
+}
