@@ -1,0 +1,60 @@
+/* :host ::ng-deep .custom-spinner .p-progress-spinner-circle {
+    animation: custom 0.5s ease-in-out infinite, p-progress-spinner-color 6s ease-in-out infinite;
+   
+   
+}
+@keyframes custom {
+
+    from {
+      stroke: #fff !important;
+  }
+
+  to {
+      stroke: #fff !important;
+  }
+}
+
+.progress-spinner-container{
+    z-index: 5000;
+    position: absolute;
+}
+
+.progress-spinner {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 99;
+} */
+
+
+.loader-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent gray background */
+    z-index: 9999; /* Ensure the loader is on top */
+  }
+
+  .loader {
+    border: 8px solid #0360a5; /* White border */
+    border-top: 8px solid white; /* Blue border for a bit of color */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* Rotation animation */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

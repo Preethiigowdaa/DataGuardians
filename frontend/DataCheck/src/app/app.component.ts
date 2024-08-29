@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { LandingComponent } from '../components/landing/landing.component';
-import { NavbarComponent } from '../components/navbar/navbar.component';
-import { FooterComponent } from '../components/footer/footer.component';
+import { Component, Renderer2 } from '@angular/core';
+import { Router, Event, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, LandingComponent, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'DataCheck';
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+  constructor(private router: Router) {
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        console.log('Current URL:', event.url);
+      }
+    });
+  }
 }

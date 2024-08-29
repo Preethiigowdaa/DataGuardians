@@ -1,0 +1,226 @@
+/* Main Content Styling */
+.main-content {
+    margin-top: 4rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px; /* Adjust padding for smaller screens */
+}
+.main-content {
+    background: linear-gradient(120deg, #8fffce2e, #b8e7ff63 26.85%, #c2d1ff8c 59.66%, #d2ccff69);
+    animation: backgroundGradient 12s ease infinite;
+    animation-play-state: running;
+  }
+/* Product Header Styling */
+.product-header {
+    position: relative;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adjust font size and margin for smaller screens */
+.product-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 1.2rem;
+  margin-bottom: 20px;
+  max-width: 50%;
+  text-align: left;
+}
+
+.button-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  /* Styles for the Get Started and Go Back button */
+  .get-started-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    width: 8rem;
+  }
+  .dark .get-started-button{
+    background-color: whitesmoke;
+    color: #333;
+  }
+  
+  /* Options container */
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; 
+    right: 0px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-20px);
+  }
+  
+  .options-container .option-button {
+    padding: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    transition: background 0.3s ease;
+  }
+  
+  .options-container .option-button:last-child {
+    border-bottom: none;
+  }
+  
+  .options-container .option-button:hover {
+    background: #f0f0f0;
+  }
+  
+  .options-container.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Ensure button transitions smoothly */
+  .get-started-button,
+  .options-container {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+.features-container {
+    display: flex;
+    padding: 20px;
+    gap: 2rem; /* Adjust gap between columns */
+    margin-top: 2rem;
+    width: 100%;
+    transition: margin-top 0.3s ease; /* Smooth transition for moving down */
+  }
+.features-header {
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+  }
+  
+  /* Accordion Container Styling */
+  .accordion-container {
+    flex: 1;
+  }
+ .dark .accordion-container, .dark .accordion{
+  background-color:#333;
+  color: white;
+ }
+.accordion {
+    border-radius: 6px;
+    background-color: white;
+    color: #444;
+    cursor: pointer;
+    padding: 15px; /* Adjust padding for smaller screens */
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px; /* Adjust font size for readability */
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion:hover, .accordion.active {
+    background: linear-gradient(to right, #434343 0%, black 100%);;
+    color: white;
+}
+
+.accordion:after {
+    font-size: larger;
+    content: '\002B'; /* Plus sign */
+    color: black;
+    font-weight: 900;
+    float: right;
+    margin-left: 5px;
+}
+.accordion:hover:after {
+    color: white;
+}
+.desc{
+    margin:1rem;
+}
+.accordion.active:after {
+    content: "\2212"; /* Minus sign */
+    color: white;
+}
+.dark .panel{
+  background-color: #333;
+  color: white;
+}
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.panel.show {
+    max-height: 500px;
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-text{
+    font-weight: 700;
+font-size: larger;
+  }
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 768px) {
+    .features-container {
+        flex-direction: column;
+        gap: 1rem; /* Reduce gap on mobile */
+    }
+
+    .product-title {
+        font-size: 1.5rem;
+    }
+
+    .product-description {
+        font-size: 0.9rem;
+    }
+    .accordion-container {
+        width: 100%;
+      }
+    .accordion {
+        font-size: 14px; /* Adjust font size for mobile */
+        padding: 12px; /* Adjust padding for smaller screens */
+    }
+
+    .panel {
+        padding: 0 12px; /* Adjust padding for mobile */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .product-description {
+        font-size: 0.8rem;
+        max-width: 100%;
+    }
+
+    .accordion {
+        font-size: 12px; /* Further reduce font size for very small screens */
+        padding: 10px; /* Further reduce padding for very small screens */
+    }
+
+    .panel {
+        padding: 0 10px; /* Further adjust padding for very small screens */
+    }
+}

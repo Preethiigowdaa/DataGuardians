@@ -1,0 +1,169 @@
+/* src/app/navbar/navbar.component.css */
+
+/* General styles for navbar */
+.navbar.page-header {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  border: solid var(--text-color);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 5px;
+}
+
+.arrow.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 12px 16px;
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.toggle-theme-container {
+  padding: 10px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+.slider.round {
+  border-radius: 20px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Profile picture styles */
+.profile-picture {
+  width: 100%;
+  height: auto;
+}
+
+/* Nav title link styles */
+.nav-title a {
+  color: var(--text-color);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* User options styles */
+.user-options {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.user-options .profile-name {
+  margin-right: 8px;
+}
+
+/* Profile picture container styles */
+.profile-picture-container {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-picture-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}

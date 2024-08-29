@@ -1,0 +1,40 @@
+<nav class="navbar page-header navbar-light fixed-top">
+  <div class="d-flex justify-content-between w-100" style="background-image: url('https://cdn.kekastatic.net/shared/assets/images/components/page-header/2.png');">
+    <div class="d-flex align-items-center ps-2">
+      <a class="navbar-brand cursor-pointer" href="#/home">
+        <img alt="DataGuardians" height="55" width="55" src="assets/logo.png">
+      </a>
+      <div class="nav-title align-self-center">
+        <a class="org-name" href="#/home">DATA GUARDIANS</a>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center pe-2">
+      <div id="top-nav" class="page-header-left d-flex align-items-center">
+        <div class="dropdown">
+          <button id="dropdownMenuButton" class="dropdown-button" aria-expanded="false">
+            John Doe
+            <i class="arrow down"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+            <a (click)="navigateToProfile()"  class="dropdown-item"><i class="fas fa-user"></i> Profile</a> <!-- Updated to routerLink -->
+            <a routerLink="/logout" class="dropdown-item"><i class="fas fa-power-off"></i> Logout</a> <!-- Updated to routerLink -->
+            <div class="toggle-theme-container">
+              <label class="text-x-small mr-10">Light</label>
+              <label class="theme-switch">
+                <input type="checkbox" id="themeSwitch">
+                <span class="slider round"></span>
+              </label>
+              <div class="d-flex justify-content-center align-items-center">
+                <label class="text-x-small ml-10">Dark</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-picture-container">
+          <img class="profile-picture" src="assets/user.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,68 @@
+<!-- landing.component.html -->
+<div class="main-content" [ngClass]="{'dark-theme': currentTheme === 'dark', 'light-theme': currentTheme === 'light'}">
+    <div class="product-header">
+      <h1 class="product-title" style="font-size: 4rem;">Harmony</h1>
+      <p class="product-description">
+        This is a 3-line random description about the product. This product aims
+        to solve all your problems by providing you with all the necessary tools
+        and resources. Start exploring today and make the best use of it!
+      </p>
+      <div class="button-container" [ngClass]="currentTheme">
+        <button *ngIf="!showOptions" class="get-started-button" (click)="toggleOptions()">
+          Get Started
+        </button>
+        <button *ngIf="showOptions" class="get-started-button" (click)="toggleOptions()">
+          Go Back
+        </button>
+        <div *ngIf="showOptions" class="options-container">
+          <button class="get-started-button mb-2">Option 1</button>
+          <button class="get-started-button mb-2">Option 2</button>
+          <button class="get-started-button mb-2">Option 3</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+    <div class="features-container" [ngClass]="currentTheme">
+      <div class="features-header">
+        <h2 style="font-size: 3rem;">Benefits of Amazon EC2</h2>
+      </div>
+      <div class="accordion-container">
+        <button class="accordion" (click)="toggleAccordion(0)" [class.active]="openIndices[0]">
+          <span class="accordion-text">Feature 1</span>
+        </button>
+        <div class="panel" [ngClass]="{'show': openIndices[0]}">
+          <p class="desc">This is a 3-line random description about the product. This product aims to solve all your problems by providing you with all the necessary tools and resources. Start exploring today and make the best use of it!</p>
+          <p class="desc"><button class="get-started-button">Try Now!</button></p>
+        </div>
+  
+        <button class="accordion" (click)="toggleAccordion(1)" [class.active]="openIndices[1]">
+          <span class="accordion-text">Feature 2</span>
+        </button>
+        <div class="panel" [ngClass]="{'show': openIndices[1]}">
+          <p class="desc">This is a 3-line random description about the product. This product aims to solve all your problems by providing you with all the necessary tools and resources. Start exploring today and make the best use of it!</p>
+          <p class="desc"><button class="get-started-button">Try Now!</button></p></div>
+  
+        <button class="accordion" (click)="toggleAccordion(2)" [class.active]="openIndices[2]">
+          <span class="accordion-text">Feature 3</span>
+        </button>
+        <div class="panel" [ngClass]="{'show': openIndices[2]}">
+          <p class="desc">This is a 3-line random description about the product. This product aims to solve all your problems by providing you with all the necessary tools and resources. Start exploring today and make the best use of it!</p>
+          <p class="desc"><button class="get-started-button">Try Now!</button></p></div>
+        <button class="accordion" (click)="toggleAccordion(3)" [class.active]="openIndices[3]">
+            <span class="accordion-text">Feature 4</span>
+          </button>
+          <div class="panel" [ngClass]="{'show':openIndices[3]}">
+            <p class="desc">This is a 3-line random description about the product. This product aims to solve all your problems by providing you with all the necessary tools and resources. Start exploring today and make the best use of it!</p>
+            <p class="desc"><button class="get-started-button">Try Now!</button></p></div>
+          <button class="accordion" (click)="toggleAccordion(4)" [class.active]="openIndices[4]">
+            <span class="accordion-text">Feature 5</span>
+          </button>
+          <div class="panel" [ngClass]="{'show': openIndices[4]}">
+            <p class="desc">This is a 3-line random description about the product. This product aims to solve all your problems by providing you with all the necessary tools and resources. Start exploring today and make the best use of it!</p>
+            <p class="desc"><button class="get-started-button">Try Now!</button></p></div>
+      </div>
+    </div>
+ 
+  
