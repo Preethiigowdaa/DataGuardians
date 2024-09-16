@@ -46,22 +46,14 @@ body {   font-family: 'Roboto', sans-serif; }
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  position: fixed;
   margin: 0;
   padding: 0;
   height: 100%; /* Full height */
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-.main-content {
-  background: linear-gradient(120deg, #8fffce2e, #b8e7ff63 26.85%, #c2d1ff8c 59.66%, #d2ccff69);
-  animation: backgroundGradient 12s ease infinite;
-  animation-play-state: running;
-}
 .main-content-route{
   width: 100%;
-  position: fixed;
-  height: 93vh;
   overflow-y: auto;
 }
 .main-content {

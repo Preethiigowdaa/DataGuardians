@@ -15,8 +15,8 @@
           Go Back
         </button>
         <div *ngIf="showOptions" class="options-container">
-          <button class="get-started-button mb-2">Option 1</button>
-          <button class="get-started-button mb-2">Option 2</button>
+          <button class="get-started-button mb-2"  (click)="openSourceOnboard()">Source Onboard</button>
+          <button class="get-started-button mb-2" (click)="openSourceLibrary()">Configured Sources</button>
           <button class="get-started-button mb-2">Option 3</button>
         </div>
       </div>

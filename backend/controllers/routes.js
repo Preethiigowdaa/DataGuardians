@@ -7,10 +7,10 @@ const express = require('express');
 const router = express.Router();
 
 // /* Calling products router without any token validation*/
-// router.use('/products', require('./products/productsRouter'));
+ //router.use('/products', require('./products/productsRouter'));
 // router.use('/specs', require('./specs/specsRouter'));
 // router.use('/supports', require('./support/supportsRouter'));
-// router.use('/bot', require('./chatBot/botRouter'));
+ router.use('/bot', require('./chatBot/botRouter'));
 // router.use('/nav', require('./navigator/navigatorRouter'));
 // router.route('/search').post(searchController.search);
 

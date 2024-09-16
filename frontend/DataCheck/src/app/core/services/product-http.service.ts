@@ -17,16 +17,15 @@ export class ProductHttpService {
     private appConf: AppConfig
   ) {}
 
-  // readonly PRODUCTS_ENDPOINT: string = '/products';
+  readonly PRODUCTS_ENDPOINT: string = '/bot';
 
-  // getWhatsNewItems(
-  //   productKey: string | number,
-  //   indicationKey: string | number
-  // ): Observable<any> {
-  //   return this.httpService.get(
-  //     this.PRODUCTS_ENDPOINT + '/whatsnew' + `/${productKey}/${indicationKey}`
-  //   );
-  // }
+  getDataProvider(): Observable<any> {
+    return this.httpService.get(this.PRODUCTS_ENDPOINT + '/getDataProvider');
+  }
+
+  getDataSet(): Observable<any> {
+    return this.httpService.get(this.PRODUCTS_ENDPOINT + '/getDataSetName');
+  }
   // getRecentChanges(
   //   productKey: string | number,
   //   indicationKey: string | number

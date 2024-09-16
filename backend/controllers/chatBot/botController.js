@@ -1,26 +1,54 @@
-// 'use strict';
+'use strict';
 
-// /* Importing modules */
-// const botSchema = require('./botSchema');
-// const botService = require('./botService');
+const botSchema = require('./botSchema');
+const botService = require('./botService');
+const botCtrl = {};
 
-// const botCtrl = {};
+botCtrl.getActivity = async (req, res) => {
+    try {
+        const activityList = await botService.getActivity();
 
-// botCtrl.getActivity = async (req, res) => {
-//     try {
-//         const activityList = await botService.getActivity();
+        return res
+            .status(APP_DATA.STATUS_CODES.SUCCESS_CODE)
+            .json(activityList);
+    } catch (err) {
+        /* eslint-disable no-console */
+        console.error(err);
+        return res
+            .status(APP_DATA.STATUS_CODES.INTERNAL_SERVER_ERROR_CODE)
+            .send(APP_DATA.APP_MESSAGES.SOMETHING_WENT_WRONG);
+    }
+};
+botCtrl.getDataProvider = async (req, res) => {
+    try {
+        const dataProviderList = await botService.getDataProvider();
 
-//         return res
-//             .status(APP_DATA.STATUS_CODES.SUCCESS_CODE)
-//             .json(activityList);
-//     } catch (err) {
-//         /* eslint-disable no-console */
-//         console.error(err);
-//         return res
-//             .status(APP_DATA.STATUS_CODES.INTERNAL_SERVER_ERROR_CODE)
-//             .send(APP_DATA.APP_MESSAGES.SOMETHING_WENT_WRONG);
-//     }
-// };
+        return res
+            .status(APP_DATA.STATUS_CODES.SUCCESS_CODE)
+            .json(dataProviderList);
+    } catch (err) {
+        /* eslint-disable no-console */
+        console.error(err);
+        return res
+            .status(APP_DATA.STATUS_CODES.INTERNAL_SERVER_ERROR_CODE)
+            .send(APP_DATA.APP_MESSAGES.SOMETHING_WENT_WRONG);
+    }
+};
+botCtrl.getDataSetName = async (req, res) => {
+    try {
+        const dataSetList = await botService.getDataSetName();
+
+        return res
+            .status(APP_DATA.STATUS_CODES.SUCCESS_CODE)
+            .json(dataSetList);
+    } catch (err) {
+        /* eslint-disable no-console */
+        console.error(err);
+        return res
+            .status(APP_DATA.STATUS_CODES.INTERNAL_SERVER_ERROR_CODE)
+            .send(APP_DATA.APP_MESSAGES.SOMETHING_WENT_WRONG);
+    }
+};
 // botCtrl.addActivity = async (req, res) => {
 //     const dataObj = req.body;
 //     try {
@@ -78,4 +106,4 @@
 //     }
 // };
 
-// module.exports = botCtrl;
+ module.exports = botCtrl;

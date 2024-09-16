@@ -1,0 +1,24 @@
+/* layout.component.css */
+.app-container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	
+
+	.flex-container {
+		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
+	}
+	
+	.side-nav {
+		width: 250px;
+		background-color: #f0f0f0;
+	}
+	
+	.content {
+		flex-grow: 1;
+		overflow-x: hidden;
+	}
+
+}

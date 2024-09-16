@@ -1,17 +1,29 @@
-// 'use strict';
+'use strict';
 
-// /* Importing modules */
-// const { runQuery, toNumber, escapeString } = require('../../services/helpers');
+const { runQuery, toNumber, escapeString } = require('../../services/helpers');
 
-// const botDataBase = {};
+const botDataBase = {};
 
-// botDataBase.getActivity = async () => {
-//     const query = `
-//     SELECT *
-//     FROM chat_activity order by activity_id desc ;
-//     `;
-//     return await runQuery(query);
-// };
+botDataBase.getActivity = async () => {
+    const query = `SELECT * FROM HRMNY_CNF_ZN.ENTITY_META T WHERE IS_ACTV = TRUE limit 10;`;
+    const result = await runQuery(query);
+   // console.log("Raw data from database:", result);
+    return result;
+};
+botDataBase.getDataProvider = async () => {
+    const query =`SELECT DISTINCT ENT_PRVDR_NM FROM HRMNY_CNF_ZN.ENTITY_META T WHERE IS_ACTV = TRUE ;`;
+    
+    const result = await runQuery(query);
+   // console.log("Raw data from database:", result);
+    return result;
+};
+botDataBase.getDataSetName = async () => {
+    const query =`SELECT DISTINCT ENT_ID , ENT_NM FROM HRMNY_CNF_ZN.ENTITY_META T WHERE IS_ACTV = TRUE AND ENT_PRVDR_NM  =ENT_PRVDR_NM AND SRC_LYR_ID =SRC_LYR_ID`;
+    
+    const result = await runQuery(query);
+   // console.log("Raw data from database:", result);
+    return result;
+};
 
 // botDataBase.getQuestionsStartingWith = async (prefix) => {
 //     const query = `
@@ -89,4 +101,4 @@
 // };
 
 
-// module.exports = botDataBase;
+ module.exports = botDataBase;

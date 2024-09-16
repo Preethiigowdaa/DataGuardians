@@ -1,5 +1,10 @@
+
 <app-navbar *ngIf="showNavbar "></app-navbar>
 <div class="main-content-route">
-  <router-outlet></router-outlet>
-</div>
-<app-footer></app-footer>
+  <div style="min-height: 90vh; background: linear-gradient(120deg, #8fffce2e, #b8e7ff63 26.85%, #c2d1ff8c 59.66%, #d2ccff69);
+  animation: backgroundGradient 12s ease infinite;
+  animation-play-state: running;">
+			<router-outlet></router-outlet>
+    </div>
+      <app-footer></app-footer>
+</div> 

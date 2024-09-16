@@ -1,4 +1,5 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -12,6 +13,8 @@ import { TableModule } from 'primeng/table';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { RouterModule } from '@angular/router';
+import { DropdownModule } from 'primeng/dropdown';
+import { ButtonModule } from 'primeng/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './core/components/landing/landing.component';
@@ -19,6 +22,8 @@ import { NavbarComponent } from './common/components/navbar/navbar.component';
 import { FooterComponent } from './common/components/footer/footer.component';
 import { ProfileComponent } from './core/components/profile/profile.component';
 import { LoginComponent } from './common/components/login/login.component';
+import { SourceOnboardComponent } from './core/components/source-onboard/source-onboard.component';
+import { SourceLibraryComponent } from './core/components/source-library/source-library.component';
 
 // function initializeKeycloak(keycloak: KeycloakService) {
 //   return () =>
@@ -52,12 +57,20 @@ import { LoginComponent } from './common/components/login/login.component';
     LoginComponent,
     NavbarComponent,
     FooterComponent,
+    SourceOnboardComponent,
+    SourceLibraryComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule,
     AppRoutingModule,
     FormsModule,
+    DropdownModule,
+    TableModule,
+    ButtonModule,
+    NoopAnimationsModule,
+    MultiSelectModule,
+    HttpClientModule,
     // NgxEchartsModule.forRoot({ echarts: () => import('echarts') }),
     // FormsModule,
     // BrowserModule,

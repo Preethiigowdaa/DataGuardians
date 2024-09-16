@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from 'src/app/theme.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -11,7 +12,7 @@ export class LandingComponent implements OnInit {
   showOptions = false;
   currentTheme: string = 'light'; // Initialize with the default theme
 
-  constructor(private themeService: ThemeService) {
+  constructor(private themeService: ThemeService, private router: Router) {
     console.log('LandingComponent initialized');
   }
 
@@ -27,5 +28,11 @@ export class LandingComponent implements OnInit {
   }
   toggleAccordion(index: number) {
     this.openIndices[index] = !this.openIndices[index];
+  }
+  openSourceOnboard() {
+    this.router.navigate(['/source-onboard']);
+  }
+  openSourceLibrary() {
+    this.router.navigate(['/source-library']);
   }
 }

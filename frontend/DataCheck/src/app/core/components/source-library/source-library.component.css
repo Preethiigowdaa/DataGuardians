@@ -1,0 +1,80 @@
+/* General Styles */
+.main-content {
+    padding: 2rem;
+    color: var(--text-color);
+  }
+  
+  .p-grid {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure columns stay in a single row */
+    gap: 1rem;
+  }
+  
+  .p-col-12 {
+    flex: 1 1 100%;
+  }
+  
+  .p-md-4 {
+    flex: 1 1 33.3333%;
+  }
+  
+  .filter-section {
+    background: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-item {
+    margin-bottom: 1rem;
+  }
+  
+  .filter-item label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .button-group {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .p-datatable-striped .p-datatable-tbody > tr:nth-child(even) {
+    background-color: var(--secondary-color);
+  }
+  
+  .p-datatable-striped .p-datatable-tbody > tr:nth-child(odd) {
+    background-color: var(--background-color);
+  }
+  
+  .p-datatable-thead > tr > th {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: left;
+  }
+  
+  .p-datatable-tbody > tr > td {
+    padding: 0.75rem;
+  }
+  
+  .p-button-outlined.p-button-danger {
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+  }
+  
+  .p-button-outlined.p-button-danger:hover {
+    background-color: var(--danger-color);
+    color: var(--text-color);
+  }
+  
+  .p-button-outlined.p-button-success {
+    border-color: var(--success-color);
+    color: var(--success-color);
+  }
+  
+  .p-button-outlined.p-button-success:hover {
+    background-color: var(--success-color);
+    color: var(--text-color);
+  }

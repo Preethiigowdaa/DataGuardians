@@ -1,0 +1,92 @@
+<div class="main-content" [ngClass]="currentTheme">
+    <div class="container-fluid">
+        <div class="row">
+          <!-- First Column: Filters -->
+          <div class="col-md-4 d-flex flex-column mb-2">
+            <div class="filter-section">
+              <h2>Filters</h2>
+              <div class="filter-item">
+                <label for="dataProvider">Data Provider:</label>
+                <p-multiSelect [options]="dataProviders" optionLabel="name" placeholder="Select Data Providers"
+                               [(ngModel)]="selectedProviders" [showClear]="true" [filter]="true" [style]="{'color': 'black'}"></p-multiSelect>
+              </div>
+              <div class="filter-item">
+                <label for="dataSet">Data Set:</label>
+                <p-multiSelect [options]="dataSets" optionLabel="name" placeholder="Select Data Sets"
+                               [(ngModel)]="selectedSets" [showClear]="true" [filter]="true" [style]="{'color': 'black'}"></p-multiSelect>
+              </div>
+              <div class="filter-item">
+                <label for="frequency">Frequency:</label>
+                <p-multiSelect [options]="frequencies" optionLabel="name" placeholder="Select Frequencies"
+                               [(ngModel)]="selectedFrequencies" [showClear]="true" [filter]="true" [style]="{'color': 'black'}"></p-multiSelect>
+              </div>
+              <div class="button-group">
+                <button pButton type="button" label="Reset" class="p-button-outlined p-button-danger" (click)="resetFilters()"></button>
+                <button pButton type="button" label="Apply" class="p-button-outlined p-button-success" (click)="applyFilters()"></button>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Second Column: Table 1 -->
+          <div class="col-md-4 mb-2">
+              <p-table [value]="table1Data" [paginator]="true" [rows]="10" [responsive]="true" class="p-datatable-striped">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th>Data Provider</th>
+                    <th>Data Set</th>
+                    <th>Frequency</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData>
+                  <tr>
+                    <td>{{ rowData.dataProvider }}</td>
+                    <td>{{ rowData.dataSet }}</td>
+                    <td>{{ rowData.frequency }}</td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </div>
+         
+        
+          <!-- Third Column: Table 2 -->
+          <div class="col-md-4 mb-2">
+              <p-table [value]="table2Data" [paginator]="true" [rows]="10" [responsive]="true" class="p-datatable-striped">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th>Field Name</th>
+                    <th>Data Type</th>
+                    <th>Not Null</th>
+                    <th>Unique</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData>
+                  <tr>
+                    <td>{{ rowData.fieldName }}</td>
+                    <td>{{ rowData.dataType }}</td>
+                    <td>
+                        <i class="fa" [ngClass]="{
+                          'fa-check': rowData.notNull, 
+                          'fa-times': !rowData.notNull, 
+                          'text-success': rowData.notNull, 
+                          'text-danger': !rowData.notNull
+                        }"></i>
+                      </td>
+                      <td>
+                        <i class="fa" [ngClass]="{
+                          'fa-check': rowData.unique, 
+                          'fa-times': !rowData.unique, 
+                          'text-success': rowData.unique, 
+                          'text-danger': !rowData.unique
+                        }"></i>
+                      </td>
+                      
+                  </tr>
+                </ng-template>
+              </p-table>
+           
+          </div>
+        </div>
+      </div>
+      
+  </div>
+  

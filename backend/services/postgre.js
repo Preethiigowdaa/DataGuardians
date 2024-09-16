@@ -220,11 +220,12 @@ exports.connectToSnowflake = async () => {
 };
 
 // Function to execute a query
-exports.executeQuery = async (query) => {
+exports.executeQuery = async (query,values = []) => {
   try {
     return new Promise((resolve, reject) => {
       connection.execute({
         sqlText: query,
+        binds: values,
         complete: (err, stmt, rows) => {
           if (err) {
             reject('Failed to execute statement due to the following error: ' + err.message);

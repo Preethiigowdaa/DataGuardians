@@ -99,9 +99,9 @@
   }
 .features-container {
     display: flex;
+    background-color: var(--background-color);
     padding: 20px;
     gap: 2rem; /* Adjust gap between columns */
-    margin-top: 2rem;
     width: 100%;
     transition: margin-top 0.3s ease; /* Smooth transition for moving down */
   }
